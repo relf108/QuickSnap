@@ -11,7 +11,7 @@ namespace CardGames
 		    Bitmap cards;
 		    cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
 		    SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53); 
-		    SwinGame.LoadFontNamed ("GameFont", "arial.ttf", 12);
+		    SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 12);
 		}
 
 		/// <summary>
