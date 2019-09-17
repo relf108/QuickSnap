@@ -6,12 +6,12 @@ namespace CardGames
 {
     public class SnapGame
     {
-     public static void LoadResources()
+        public static void LoadResources()
 		{
-		Bitmap cards;
-		cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
-		SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53); 
-		SwinGame.LoadFontNamed ("GameFont", "arial.ttf", 12);
+		    Bitmap cards;
+		    cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
+		    SwinGame.BitmapSetCellDetails (cards, 82, 110, 13, 5, 53); 
+		    SwinGame.LoadFontNamed ("GameFont", "arial.ttf", 12);
 		}
 
 		/// <summary>
@@ -25,8 +25,23 @@ namespace CardGames
 
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
-				myGame.FlipNextCard ();
+                myGame.Start();
 			}
+            if (myGame.IsStarted)
+            {
+                if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT) && SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    // TODO: add sound effects
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_LSHIFT))
+                {
+                    myGame.PlayerHit(0);
+                }
+                else if (SwinGame.KeyTyped(KeyCode.vk_RSHIFT))
+                {
+                    myGame.PlayerHit(1);
+                }
+            }
 		}
 
 		/// <summary>
